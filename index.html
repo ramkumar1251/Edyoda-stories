@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Edyoda Stories Assignment</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #f2f6ff;
+            font-family: 'Raleway', sans-serif;
+        }
+/*header*/
+        header{
+            width: 100%;
+            padding: 16px 78px;
+            background-color: #fff;
+            z-index: 99;
+            position:fixed;
+            box-shadow: 0 1px 1px #ccc;
+            top:0;
+            left:0;
+        }
+        .edyoda-logo{
+            display:flex;
+        }
+        a.logo{
+            text-decoration: none;
+            font-weight: bolder;
+        }
+        .logo h3{
+            background-image: linear-gradient(269deg,#0048ff, #0096ff),linear-gradient(#000,#000);
+            font-size: 32px;
+            margin: 0px;
+            font-weight: 1000;
+            color: #0084ff;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo p{
+            color:#000;
+            font-size: 18px;
+            margin: 0px;
+            font-weight: 500;
+            font-style:italic;
+        }
+        .dropdown{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        position: relative;
+        }
+        .dropdown i{
+            cursor: pointer;
+            padding-top: 0px;
+            padding-left: 8px;
+        }
+        .dropdown-text{
+            cursor: pointer;
+            color: #000;
+            font-size: 16px;
+            border:none;
+            background-color: #fff;
+            padding-left:60px;
+            
+        }
+        .dropdown-content{
+            visibility: hidden;
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            left: 60px;
+            background-color: #fff;
+            min-width: 250px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.15s ease-in-out;
+        }
+        .dropdown-content a{
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display:block;
+        }
+        .dropdown-content a:hover{
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content{
+            visibility: visible;
+            opacity:1;
+        }
+/*filter starts*/
+main {
+    padding-top: 120px;
+  }
+
+  .filter-heading-container {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .heading {
+    color: #000;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 600;
+  }
+  
+  .categories-container {
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding-top: 16px;
+  }
+  
+  .sub-heading {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 8px;
+  }
+  
+  .categories-list {
+    margin-top: 10px;
+  }
+  
+  .category-name {
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    color: #0084ff;
+    padding: 6px 14px;
+    width: auto;
+    border: 1px solid #0084ff;
+    margin: 5px;
+    border-radius: 15px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .category-name:hover {
+    background-color: #0084ff;
+    color: #fff;
+  }
+
+/* Card starts  */
+a {
+    color: #000;
+    text-decoration: none;
+}
+  
+.card-box {
+    width: 100%;
+    margin: auto;
+}
+  
+.card-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-container {
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    width: calc(360px - 3px);
+    height: 400px;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 168, 255, 0.3);
+}
+  
+.card-content {
+    padding: 16px 24px;
+}
+  
+.card-pic {
+    width: 100%;
+    height: 176px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+  
+.auth-wrapper {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+  
+.card-author {
+    color: #0096ff;
+    font-size: 14px;
+    font-style: Italic;
+    font-weight: 500;
+}
+  
+.card-date {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-weight: 300;
+}
+  
+.card-title {
+    font-size: 18px;
+    text-align: left;
+    font-weight: 600;
+    margin: 0;
+ }
+  
+.card-description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    color: rgba(0, 0, 0, 0.973);
+    margin: 12px 0;
+}
+/* footer starts */
+#end-story{
+    background-color: #172146;
+    padding: 40px 16%;
+}
+    </style>
+</head>
+<body>
+<!--Header starts here-->
+  <header>
+    <div class="edyoda-logo">
+        <a href="#" class="logo">
+            <h3><b>Edyoda</b></h3>
+            <p>Stories</p>
+        </a>
+        <div class="dropdown">
+            <button class="dropdown-text">Explore Categories</button><i class="fa fa-chevron-down" aria-hidden="true"></i>
+            <div class="dropdown-content">
+                <a href="#">Artifical Intelligence</a>
+                <a href="#">Cloud Computing</a>
+                <a href="#">DevOps</a>
+                <a href="#">Programming Languages</a>
+                <a href="#">Mobile Application Development</a>
+                <a href="#">Technology and Tools</a>
+                <a href="#">Others</a>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!--Header Ends here -->
+
+  <!-- Filter starts here -->
+    <main>
+        <section class="filter-heading-container">
+            <h1 class="heading">Trending Posts</h1>
+            <div class="categories-container">
+                <i class="fa fa-filter" style="font-size: 16px; color: #4072bd;"></i>
+                <span class="sub-heading">Filter by Category</span>
+                    <div class="categories-list">
+                       <a class="category-name" href="#">All</a> 
+                       <a class="category-name" href="#">Artifical Intelligence</a> 
+                       <a class="category-name" href="#">Cloud Computing</a> 
+                       <a class="category-name" href="#">DevOps</a> 
+                       <a class="category-name" href="#">Programming Languages</a> 
+                       <a class="category-name" href="#">Mobile Application Development</a> 
+                       <a class="category-name" href="#">Technology and Tools</a>
+                       <a class="category-name" href="#">Get a job in a Tech company</a> 
+                       <a class="category-name" href="#">Others</a> 
+                    </div>
+            </div>
+        </section>
+  <!--Filter Ends here-->
+  <!--Image card starts here-->
+  <section class="card-box">
+    <div class="card-content">
+  <!--card 1-->
+        <article class="card-container">
+            <a href="#">
+                <div class="card-header">
+                    <img class="card-pic" src="https://edyoda.s3.amazonaws.com/media/blog-images/learn_machine_learning_courses_online.png" alt="Machine Learning" >
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="card-title">"Introduction to a Machine Learning Online Course"</p>
+                        <p class="auth-wrapper"><span class="card-author">Edyoda</span> |
+                        <span class="card-date">16 June 2023</span></p>
+                        <p class="card-description">We have had an insight into Artificial Intelligence. Well, one of
+                            its subfields is machine learning and this introduction will help you get a fair idea of what the machine learning</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+  <!--card 2-->
+        <article class="card-container">
+            <a href="#">
+                <div class="card-header">
+                    <img class="card-pic" src="https://edyoda.s3.amazonaws.com/media/blog-images/6.png" alt="LAMP Stack Vs. MEAN Stack" >
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="card-title">LAMP Stack Vs. MEAN Stack</p>
+                        <p class="auth-wrapper"><span class="card-author">Edyoda</span> |
+                        <span class="card-date">16 June 2023</span></p>
+                        <p class="card-description">In today’s dynamic world, rapid web application development with a
+                            smooth user interface that can adapt to specific features is the main business
+                            requirement...</p>
+                    </div>
+                </div>
+            </a>
+        </article> 
+        <!--card 3-->
+        <article class="card-container">
+            <a href="#">
+                <div class="card-header">
+                    <img class="card-pic" src="https://edyoda.s3.amazonaws.com/media/blog-images/4.png" alt="Cloud Computing" >
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="card-title">Impact of Cloud Computing in various industries</p>
+                        <p class="auth-wrapper"><span class="card-author">Edyoda</span> |
+                        <span class="card-date">16 June 2023</span></p>
+                        <p class="card-description">Cloud computing has been rapidly gaining pace in the world of
+                            information technology. It has been observed that over 90% of global enterprises are
+                            using cloud technology as part of their business.</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <!--card 4-->
+        <article class="card-container">
+            <a href="#">
+                <div class="card-header">
+                    <img class="card-pic" src="https://edyoda.s3.amazonaws.com/media/blog-images/3.png" alt="Big Data Analytics" >
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="card-title">Challenges of Machine Learning in Big Data Analytics</p>
+                        <p class="auth-wrapper"><span class="card-author">Edyoda</span> |
+                        <span class="card-date">16 June 2023</span></p>
+                        <p class="card-description">Machine Learning is a subset of artificial intelligence which is an
+                            important part of...</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <!--card 5-->
+        <article class="card-container">
+            <a href="#">
+                <div class="card-header">
+                    <img class="card-pic" src="https://edyoda.s3.amazonaws.com/media/blog-images/5.png" alt="Myths around Cybersecurity" >
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="card-title">Breaking the Myths around Cybersecurity</p>
+                        <p class="auth-wrapper"><span class="card-author">Edyoda</span> |
+                        <span class="card-date">16 June 2023</span></p>
+                        <p class="card-description">Cybersecurity plays an integral role in the process of good
+                            business models. But even cybersecurity...</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <!--card 6-->
+        <article class="card-container">
+            <a href="#">
+                <div class="card-header">
+                    <img class="card-pic" src="https://edyoda.s3.amazonaws.com/media/blog-images/7.png" alt="Data Backup and Recovery" >
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="card-title">Importance of Data Backup and Recovery in the IT industry</p>
+                        <p class="auth-wrapper"><span class="card-author">Edyoda</span> |
+                        <span class="card-date">16 June 2023</span></p>
+                        <p class="card-description">A business must always introspect the areas where they lack in
+                            order to bring about a positive change...</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <!--card 7-->
+        <article class="card-container">
+            <a href="#">
+                <div class="card-header">
+                    <img class="card-pic" src="https://edyoda.s3.amazonaws.com/media/blog-images/automation-testing-an-overview-2.png" alt="Web Scraping" >
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="card-title">What is Web Scraping?</p>
+                        <p class="auth-wrapper"><span class="card-author">Edyoda</span> |
+                        <span class="card-date">16 June 2023</span></p>
+                        <p class="card-description">Simply put, web scraping is one of the tools developers use to
+                            gather and analyze information from the Internet....</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <!--card 8-->
+        <article class="card-container">
+            <a href="#">
+                <div class="card-header">
+                    <img class="card-pic" src="https://edyoda.s3.amazonaws.com/media/blog-images/what_is_isa_blog_1.png" alt="Income Share Agreement" >
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="card-title">What is Income Share Agreement?</p>
+                        <p class="auth-wrapper"><span class="card-author">Edyoda</span> |
+                        <span class="card-date">16 June 2023</span></p>
+                        <p class="card-description">The term Income Share Agreement has been around for a long time
+                            since 1955 to be precise. Surprised...</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <!--card 9-->
+        <article class="card-container">
+            <a href="#">
+                <div class="card-header">
+                    <img class="card-pic" src="https://edyoda.s3.amazonaws.com/media/blog-images/practical_machine_learning_1.png" alt="Machine Learing with Python and Keras" >
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="card-title">Practical Machine Learning with Python and Keras</p>
+                        <p class="auth-wrapper"><span class="card-author">Edyoda</span> |
+                        <span class="card-date">16 June 2023</span></p>
+                        <p class="card-description">Machine learning is a field of artificial intelligence that uses
+                            statistical techniques to give computer systems the ...</p>
+                    </div>
+                </div>
+            </a>
+        </article>   
+    </div>
+  </section>
+</main>
+<!--Image card ends here-->
+
+<!--Footer starts-->
+<footer id="end-story">
+    <p style="font-size: 20px; color: #fff; text-align: center; padding: 6px; font-weight: 700;">Edyoda Stories Assignment 2 @2023</p>
+    <p style="font-size: 20px; color: #fff; text-align: center; padding: 6px; font-weight: 500;">By Ramkumar</p>
+</footer>
+</body>
+</html>
